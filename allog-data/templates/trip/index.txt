@@ -1,0 +1,5 @@
+@keywords    trip, vacation
+
+# This is a note from an awsome trip!
+
+It was sunny and alcohol was cheap :)

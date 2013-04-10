@@ -1,0 +1,21 @@
+{
+  "name":         "allog",
+  "version":      "0.9.4",
+  "description":  "Simple tool for managing text notes with attachments",
+  "keywords": [
+    "note",
+    "manager",
+    "project"
+  ],
+  "dependencies": {
+    "express":    "x.x.x",
+    "jade":       "x.x.x",
+    "wrench":     "x.x.x"
+  },
+  "devDependencies": {
+    "nodemon":    "x.x.x"
+  },
+  "repository":   "",
+  "author":       "Pawe³ Turlejski",
+  "license":      "Apache 2.0"
+}

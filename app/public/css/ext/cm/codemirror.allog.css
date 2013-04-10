@@ -1,0 +1,66 @@
+/********************************************************************/
+
+.cm-s-allog.CodeMirror {
+    font-family: "Century Gothic", "Lucida Sans Unicode", "Lucida Grande", Consolas, Monaco, sans-serif;
+    font-size: 14px;
+    line-height: 1.4em;
+}
+
+/********************************************************************/
+
+.cm-s-allog .CodeMirror-gutters { background: #222; border-right: 1px solid #aaa; }
+.cm-s-allog .CodeMirror-linenumber { color: #777; }
+.cm-s-allog .CodeMirror-cursor { border-left: 2px solid maroon !important; }
+
+.cm-s-allog .CodeMirror-selected { background: #ffeecd !important; } /**/
+
+/********************************************************************/
+
+.cm-s-allog .cm-header {color: #CA3737;}
+.cm-s-allog .cm-header1 { font-size: 1.7em; }
+.cm-s-allog .cm-header2 { font-size: 1.3em; }
+
+.cm-s-allog .cm-comment {color: #984545;}
+
+.cm-s-allog .cm-atom {color: #E56868;}
+
+.cm-s-allog .cm-keyword {color: #841212;}
+.cm-s-allog .cm-variable {color: lime;}
+.cm-s-allog .cm-variable-2 {color: #841212;}
+.cm-s-allog .cm-variable-3 {color: #841212;}
+
+.cm-s-allog .cm-link { color: #A52D6C; text-decoration: none;}
+.cm-s-allog .cm-string {color: #A52D6C; text-decoration: underline;}
+
+.cm-s-allog .cm-strong { font-weight: bold; }
+.cm-s-allog .cm-em { font-style: italic; }
+
+
+/********************************************************************/
+
+.cm-s-allog .cm-number {color: #164;}
+.cm-s-allog .cm-def {color: #00f;}
+
+.cm-s-allog .cm-property {color: black;}
+.cm-s-allog .cm-operator {color: black;}
+.cm-s-allog .cm-string-2 {color: aqua;}
+.cm-s-allog .cm-meta {color: #555;}
+.cm-s-allog .cm-error {color: #f00;}
+.cm-s-allog .cm-qualifier {color: #555;}
+.cm-s-allog .cm-builtin {color: #30a;}
+.cm-s-allog .cm-bracket {color: #997;}
+.cm-s-allog .cm-tag {color: #170;}
+.cm-s-allog .cm-attribute {color: #00c;}
+
+.cm-s-allog .cm-quote {color: red;}
+.cm-s-allog .cm-hr {color: #999;}
+
+
+/*
+.cm-negative {color: #d44 !important;}
+.cm-positive {color: #292 !important;}
+.cm-invalidchar {color: #f00;}
+div.CodeMirror span.CodeMirror-matchingbracket {color: red;}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {color: red;}
+*/
+

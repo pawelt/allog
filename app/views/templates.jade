@@ -1,0 +1,87 @@
+script#tpl-msgbox-item(type="text/template")
+    li(data-msgid!='<%= item.id %>')
+        <%= item.text %> 
+        <% if (item.closeLink) { %>   
+        a(href='#') <%= item.closeLink %>
+        <% } %>
+        
+
+script#tpl-actions-item(type="text/template")
+    <% for (var i in items) { var item = items[i], css = action.substring(0, action.indexOf(':')), hp = hrefPrefixes[i], href = hp ? '#' + hp + item : '#'; %>
+
+    li
+        a(href!='<%= href %>', data-action!='<%= action %>', data-name!='<%= item %>', class!='<%= css %>') <%= item %>
+
+    <% } %>
+
+
+script#tpl-breadcrumbs(type="text/template")
+    <% for (var i in uris) { var u = uris[i], href = '#' + u.hrefPrefix + u.uri; %>
+
+    <%= i > 0 ? '  ›  ' : ''  %>
+    a(href!='<%= href %>', data-uri!='<%= u.uri %>', class='breadcrumbs', title!='<%= u.name %>')<%= u.name %>
+
+    <% } %>
+
+    <% if (uris.length) { %>  ›  <% } %>
+    <%= lastUri.name %>
+    
+
+script#tpl-note-items(type="text/template")
+    <% for (var i in notes) { var n = notes[i], noteId = n.id, note = n.note, href = "#" + hrefPrefix + noteId; %>
+
+    li.items-item(data-uri!='<%= noteId %>')
+        div.item-note-date(href='#', data-uri!='<%= noteId %>', title!='Show <%= note.box %> / <%= note.name %>')
+            <% if (note.date !== '00-01-01 @ 00:00:00') { %>   
+            | <%= note.date %>
+            <% } else { %>
+            | ---
+            <% }  %>    
+        a.item-note-name(href!='<%= href %>', data-uri!='<%= noteId %>', title!='Browse contents of <%= note.box %> / <%= note.name %>') <%= note.name %> » 
+        div.item-note-keywords(data-uri!='<%= noteId %>', title!='Show <%= note.box %> / <%= note.name %>') <%= note.meta.keywords %>
+
+    <% } %>
+
+
+script#tpl-file-items(type="text/template")
+    <% for (var i in files) { var f = files[i], isDir = f.isDir, name = f.name, uri = parentUri + '/' + name; %>
+
+    li.items-item(data-uri!='<%= uri %>')
+        <% if (isDir) { var href = "#" + hrefPrefix + uri; %>
+        a.item-dir-name(href!='<%= href %>', data-uri!='<%= uri %>', title!='Browse contents of <%= name %>') <%= name %> » 
+        <% } else { %>
+        a.item-file-name(href='#', data-uri!='<%= uri %>', title!='Launch <%= name %>') <%= name %>
+        <% } %>
+        
+    <% } %>
+
+
+script#tpl-note-meta(type="text/template")
+    div.contents-actions
+        //a.contents-action.contents-save(href='#', data-uri!='<%= uri %>', title="Save note changes") Save
+        //a.contents-action.contents-discard(href='#', data-uri!='<%= uri %>', title="Save note changes") Discard changes
+        a.contents-action.contents-open(href='#', data-uri!='<%= uri %>', title="Open note folder") Open
+        a.contents-action.contents-trash(href='#', data-uri!='<%= uri %>', title="Move note folder to trash") Trash
+        div.contents-box Box: <%= note.box %>
+        div.contents-file-count Files: <%= note.fileCount %>
+
+    div.contents-name-parts
+        div.contents-name
+            <% if (note.date !== '00-01-01 @ 00:00:00') { %>   
+            div.contents-name-value <%= note.name %>
+            <% } else { %>
+            div <%= note.name %>
+            <% }  %> 
+        div.contents-date-time
+            <% if (note.date !== '00-01-01 @ 00:00:00') { %>   
+            span.contents-date-time-value <%= note.date %>
+            <% } else { %>
+            span ---
+            <% }  %> 
+            
+
+    //div.contents-modified Box: <%= note.box %> | Modified: <%= note.mdate %>
+
+    div.contents-keywords 
+        div.contents-keywords-value <%= note.meta.keywords %>
+        

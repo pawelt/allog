@@ -1,0 +1,107 @@
+doctype 5
+html
+    head
+        meta(charset='utf-8')
+        title #{appName} [EasyRefresh]
+        link(rel='icon', href='/img/favicon.ico', type='image/x-icon')
+        link(rel='stylesheet', href='/css/reset.css')
+        link(rel='stylesheet', href='/css/ext/jqueryui/theme.css')
+        link(rel='stylesheet', href='/css/ext/jqueryui-editable/css/jqueryui-editable.css')
+        //- 
+            link(rel='stylesheet', href='/css/ext/jqueryui-select2/select2.css')
+        link(rel='stylesheet', href='/css/ext/cm/codemirror.css')
+        link(rel='stylesheet', href='/css/ext/cm/codemirror.allog.css')
+        link(rel='stylesheet', href='/css/allog.css')
+        script(src='/js/ext/jquery-1.9.1.min.js')
+        script(src='/js/ext/jquery-ui-1.10.2.custom.min.js')
+        //- 
+            script(src='/js/ext/jqueryui-select2.js')
+            script(src='/js/ext/jqueryui-editable.js')
+            script(src='/js/ext/underscore.js')
+            script(src='/js/ext/backbone.js')
+            script(src='/js/ext/codemirror.js')
+        //- 
+            script(src='/js/ext/jqueryui-select2.min.js')
+        script(src='/js/ext/jqueryui-editable.min.js')
+        script(src='/js/ext/underscore.min.js')
+        script(src='/js/ext/backbone.min.js')
+        script(src='/js/ext/codemirror.min.js')
+
+        script(src='/js/ext/codemirror.addon.overlay.js')
+        script(src='/js/ext/codemirror.markdown.js')
+        script(src='/js/ext/codemirror.gfm.js')
+
+        script(src='/js/shared/dateutil.js')
+        script(src='/js/ajax.js')
+        script(src='/js/modules.js')
+        script(src='/js/views.js')
+        script(src='/js/main.js')
+
+        script
+            var srv = {
+                specials:       !{JSON.stringify(specials)},
+                templates:      !{JSON.stringify(templates)},
+                boxes:          !{JSON.stringify(boxes)},
+                defaultBox:     !{JSON.stringify(defaultBox)},
+                anyBox:         !{JSON.stringify(anyBox)},
+                ajaxTimeout:    !{JSON.stringify(ajaxTimeout)},
+                autosave:       !{JSON.stringify(autosave)}
+            };
+
+    body
+
+        div.app-region.app-header
+
+            a(href='/', class='app-logo')
+                img(src='/img/allog-logo.png')
+                div #{appName}
+
+            div.header-links
+                a.rebuild-cache(href='#') rebuild cache
+
+            div.header-filters
+
+                span.filter-phrase-wrap
+                    input(name='filter-phrase', class='filter-phrase')
+                    span.filter-phrase-clear-x
+                a.filter-phrase-save(href='#') Save
+
+                select.filter-saved
+                a.filter-saved-delete(href='#') Delete
+
+            div.msgbox
+
+        div.app-region.app-main
+
+            div.main-region.reg-breadcrumbs
+
+            div.main-region.reg-actions
+                section.actions-gropup
+                    h2.actions-gropup-header New note
+                    ul.actions-gropup-links.links-new-note
+
+                section.actions-gropup
+                    h2.actions-gropup-header Note boxes
+                    ul.actions-gropup-links.links-switch-box
+
+                section.actions-gropup
+                    h2.actions-gropup-header Allog folders
+                    ul.actions-gropup-links.links-open-special
+
+            div.main-region.reg-items
+                ul.items-list
+                            
+            div.main-region.reg-contents
+                div.contents-headers
+                div.contents-editor
+                    textarea.contents-editor-textarea(style="width: 200px; height: 300px;")
+
+        div.app-region.app-footer 
+            div.box-stats
+            div.note-stats Words: <strong>666</strong> &nbsp;&nbsp;&nbsp; Letters: <strong>777</strong>
+            div.note-modified
+            div.footer-copy  #{appName} #{appVersion} &copy; Paweł Turlejski
+            
+
+        // templates 
+        include templates

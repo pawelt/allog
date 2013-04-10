@@ -1,0 +1,19 @@
+@keywords    some tag, another1
+
+
+# Simple note.
+
+This is an example of a note template. 
+
+It has couple keywords and some contents demonstrating markdown features.
+
+********************
+
+## A smaller header
+
+This would be an unordered list:
+
+- with couple
+- list
+- items with **bolded** text
+

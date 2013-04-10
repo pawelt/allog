@@ -1,4 +1,3 @@
-allog
-=====
+# allog
 
-Lightweight tool for organizing notes with attachments
+Allog is a lightweight tool for organizing notes with attachments.
