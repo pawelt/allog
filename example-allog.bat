@@ -35,6 +35,6 @@ set NODE_PATH=%NODE_HOME%\node_modules;
 set PATH=%NODE_HOME%;.\node_modules\.bin;%PATH%
 
 start   %BROWSER%   http://127.0.0.1:%ALLOG_PORT%
-nodemon app/app.js
+node    app/app.js
 
 
