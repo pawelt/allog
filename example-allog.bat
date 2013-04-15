@@ -34,7 +34,7 @@ set ALLOG_PORT=1607
 set NODE_PATH=%NODE_HOME%\node_modules;
 set PATH=%NODE_HOME%;.\node_modules\.bin;%PATH%
 
-start   %BROWSER%   http://127.0.0.1:%ALLOG_PORT%
-node    app/app.js
+start                     %BROWSER%   http://127.0.0.1:%ALLOG_PORT%
+start   "allog - server"  node        app/app.js
 
 
