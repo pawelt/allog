@@ -8,9 +8,9 @@
     "project"
   ],
   "dependencies": {
-    "express":    "x.x.x",
-    "jade":       "x.x.x",
-    "wrench":     "x.x.x"
+    "express":    "^3.1.0",
+    "jade":       "^0.28.2",
+    "wrench":     "^1.4.4"
   },
   "devDependencies": {
     "nodemon":    "x.x.x"
